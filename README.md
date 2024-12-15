@@ -1,2 +1,155 @@
-# GoogleDorks
- googel dork examples to help you find vulnerabilities in sites
+# WordPress Security Dorks
+
+## 1. SQL Injection (SQLi) Dorks
+- `inurl:wp-content/plugins inurl:id=`
+- `inurl:wp-includes inurl:id=`
+- `inurl:wp-content/uploads inurl:id=`
+- `inurl:wp-json/wp/v2 inurl:id=`
+- `inurl:xmlrpc.php?rsd`
+- `inurl:wp-content/themes/ inurl:catid=`
+- `inurl:index.php?post_id=`
+- `inurl:wp-content/plugins/woocommerce`
+- `inurl:wp-login.php redirect_to=`
+- `inurl:wp-content/plugins/revslider inurl:id=`
+- `inurl:index.php?author=`
+- `inurl:index.php?cat=`
+- `inurl:index.php?id=`
+- `inurl:index.php?page_id=`
+- `inurl:index.php?wp-admin=`
+- `inurl:wp-content/plugins/ inurl:userid=`
+- `inurl:wp-content/themes/ inurl:post=`
+- `inurl:wp-content/uploads inurl:pid=`
+- `inurl:wp-includes/ inurl:tag=`
+- `inurl:wp-content/plugins/gallery inurl:id=`
+- `inurl:wp-content/plugins/invoice inurl:invoice_id=`
+- `inurl:wp-content/plugins/shop inurl:item_id=`
+- `inurl:wp-admin/index.php?id=`
+- `inurl:wp-content/plugins/slider inurl:id=`
+- `inurl:wp-login.php?lostpassword=`
+- `inurl:wp-content/plugins/woocommerce inurl:cart_id=`
+- `inurl:wp-content/themes/ inurl:author=`
+- `inurl:index.php?page=`
+- `inurl:wp-content/plugins/ inurl:order_id=`
+- `inurl:wp-content/plugins/contact-form-7 inurl:id=`
+- `inurl:wp-content/plugins/wp-ecommerce inurl:id=`
+- `inurl:index.php?post_type=`
+- `inurl:index.php?file=`
+- `inurl:index.php?id=`
+- `inurl:index.php?order=`
+- `inurl:wp-content/plugins/wpforms inurl:id=`
+- `inurl:index.php?prod_id=`
+- `inurl:index.php?sort=`
+- `inurl:index.php?item_id=`
+- `inurl:wp-admin/options-general.php?page=`
+- `inurl:wp-content/themes/ inurl:search=`
+- `inurl:wp-includes/load.php?cmd=`
+- `inurl:index.php?item=`
+- `inurl:wp-content/plugins/revslider inurl:carousel_id=`
+- `inurl:wp-content/plugins/woocommerce inurl:order=`
+- `inurl:wp-content/plugins/gallery inurl:img=`
+- `inurl:wp-content/plugins/ wp-shortcodes inurl:id=`
+- `inurl:wp-content/uploads inurl:thumb=`
+- `inurl:index.php?theme=`
+- `inurl:wp-content/plugins/ inurl:page_id=`
+- `inurl:wp-content/plugins/easy-digital-downloads inurl:id=`
+- `inurl:wp-content/plugins/wp-plugin inurl:id=`
+- `inurl:wp-content/plugins/photogallery inurl:id=`
+
+## 2. Cross-Site Scripting (XSS) Dorks
+- `inurl:wp-content/themes inurl:<script>`
+- `inurl:index.php?comment= inurl:<script>`
+- `inurl:wp-content/plugins/social inurl:<img src=x>`
+- `inurl:wp-comments-post.php inurl:<svg/onload=`
+- `inurl:wp-json/oembed/1.0 inurl:<iframe>`
+- `inurl:wp-content/plugins/file-manager inurl:<img>`
+- `inurl:index.php?theme= inurl:<div>`
+- `inurl:wp-content/themes/ inurl:<script>alert("XSS")`
+- `inurl:index.php?category= inurl:<img src=x>`
+- `inurl:wp-comments-post.php inurl:<script src=`
+- `inurl:wp-content/plugins/shortcodes inurl:<img src=x>`
+- `inurl:wp-content/plugins/ inurl:<svg onload=`
+- `inurl:wp-content/themes inurl:<script> inurl:alert`
+- `inurl:wp-content/plugins/woocommerce inurl:<script>`
+- `inurl:index.php?comment= inurl:<script>alert(1)`
+- `inurl:wp-content/plugins/ inurl:<iframe src=`
+- `inurl:index.php?theme= inurl:<script>alert('xss')`
+- `inurl:index.php?category= inurl:<div onclick=`
+- `inurl:wp-content/themes/ inurl:<img src="x">`
+- `inurl:wp-comments-post.php inurl:<img src=x>`
+- `inurl:wp-content/plugins/woocommerce inurl:alert(1)`
+- `inurl:wp-content/plugins/membership inurl:<script>`
+- `inurl:wp-content/plugins/form-7 inurl:<div onclick=`
+- `inurl:wp-content/plugins/social-buttons inurl:<img src=x>`
+- `inurl:index.php?page= inurl:<script>alert()`
+- `inurl:wp-content/plugins/wp-members inurl:<svg/onload=`
+- `inurl:wp-comments-post.php inurl:<div onclick=`
+- `inurl:wp-content/plugins/ inurl:<svg/onload=alert(1)>`
+- `inurl:index.php?product_id= inurl:<script>alert(1)`
+- `inurl:index.php?category= inurl:<svg/onload=alert()`
+- `inurl:wp-content/plugins/contact-form-7 inurl:<img src=x>`
+- `inurl:wp-content/plugins/elementor inurl:<iframe>`
+- `inurl:wp-login.php inurl:<script>alert(1)>`
+
+## 3. Local File Inclusion (LFI) Dorks
+- `inurl:wp-content/uploads/ inurl:../../`
+- `inurl:wp-config.php inurl:../../`
+- `inurl:index.php?include=../../`
+- `inurl:wp-includes/ inurl:../../`
+- `inurl:index.php?file=../../`
+- `inurl:wp-content/themes/ inurl:../../`
+- `inurl:wp-content/plugins/ inurl:../../`
+- `inurl:wp-includes/ inurl:../../../../etc/passwd`
+- `inurl:index.php?path=../../../../etc/passwd`
+- `inurl:index.php?file=../../../wp-config.php`
+- `inurl:wp-content/plugins/ inurl:../../../../etc/passwd`
+- `inurl:wp-admin/index.php?file=../../../../etc/passwd`
+- `inurl:index.php?inc=../../../../etc/passwd`
+- `inurl:wp-content/themes/ inurl:../../../wp-config.php`
+- `inurl:wp-includes/functions.php?file=../../../wp-config.php`
+- `inurl:index.php?page=../../../../etc/passwd`
+- `inurl:wp-content/uploads/ inurl:../../../../etc/passwd`
+- `inurl:index.php?page=../../../etc/passwd`
+- `inurl:wp-content/themes/ inurl:../../../etc/passwd`
+- `inurl:wp-content/plugins/ inurl:../../../etc/passwd`
+- `inurl:wp-content/themes/ inurl:../../../../etc/passwd`
+- `inurl:wp-content/plugins/ inurl:../../../../../etc/passwd`
+- `inurl:index.php?include=../../../../../../../etc/passwd`
+- `inurl:wp-includes/ inurl:../../../../../../etc/passwd`
+- `inurl:index.php?file=../../../../../wp-config.php`
+- `inurl:wp-content/plugins/ inurl:../../../wp-config.php`
+
+## 4. Information Disclosure Dorks
+- `inurl:error_log`
+- `inurl:wp-admin error_log`
+- `inurl:wp-content/debug.log`
+- `inurl:wp-content/backup`
+- `inurl:wp-config.php`
+- `inurl:wp-admin .env`
+- `inurl:wp-content/ backup.sql`
+- `inurl:wp-content/themes/ config.php`
+- `inurl:wp-content/plugins/ inurl:log`
+- `inurl:.env`
+- `inurl:.git`
+- `inurl:wp-content/uploads/ inurl:debug.log`
+- `inurl:wp-content/plugins/ inurl:api_key`
+- `inurl:wp-content/uploads inurl:php_error_log`
+- `inurl:wp-content/themes/ inurl:backup.zip`
+- `inurl:wp-content/plugins/ inurl:backup.sql`
+- `inurl:wp-content/plugins/woocommerce inurl:debug.log`
+- `inurl:wp-content/plugins/ inurl:config`
+- `inurl:wp-content/uploads/ inurl:admin`
+- `inurl:wp-config.php inurl:debug`
+- `inurl:wp-content/ inurl:php_error_log`
+- `inurl:wp-content/ inurl:debug_log`
+- `inurl:wp-content/plugins/ inurl:api_secret`
+- `inurl:wp-content/themes/ inurl:backup.sql`
+- `inurl:wp-content/themes/ inurl:.env`
+- `inurl:wp-content/uploads inurl:php_error`
+- `inurl:wp-content/ inurl:backup.zip`
+- `inurl:wp-content/uploads/ inurl:debug`
+- `inurl:wp-content/themes/ inurl:.git`
+- `inurl:wp-content/ inurl:log`
+
+---
+
+**Disclaimer**: These Google dorks are used for security testing and educational purposes. Unauthorized use for hacking or accessing systems without permission is illegal and unethical. Always conduct security research in a responsible and authorized environment.
